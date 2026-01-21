@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sustain-IT - Minimalistische Webentwicklung. Sicher, nachhaltig und kundenorientiert. Redesign, Neuentwicklung und Optimierung von Webapplikationen.">
+    <meta name="keywords" content="Webentwicklung, nachhaltig, Webdesign, Webapplikationen, Optimierung, Neustadt Weinstraße">
+    <meta name="author" content="Max Schwitzky">
+    <meta property="og:title" content="Sustain-IT - Minimalistische Webentwicklung">
+    <meta property="og:description" content="Sicher, nachhaltig und kundenorientiert. Redesign, Neuentwicklung und Optimierung von Webapplikationen.">
+    <meta property="og:type" content="website">
+    <title>Sustain-IT - Minimalistische Webentwicklung | Nachhaltig & Sicher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        .section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-white {
+            background-color: #000000;
+        }
+
+        .section-black {
+            background-color: #ffffff;
+            color: #000000;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 0;
+        }
+
+        .content {
+            max-width: 920px;
+            padding: 2rem 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .footer-info {
+            font-size: 0.875rem;
+            width: 100%;
+            text-align: center;
+            color: white;
+            background-color: #000000;
+            padding: 1.5rem 0;
+            margin-top: auto;
+        }
+
+        .footer-info p {
+            margin: 0.5rem 0;
+            font-size: 0.875rem;
+        }
+
+        .footer-info a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .footer-info a:hover,
+        .footer-info a:focus {
+            color: greenyellow;
+        }
+
+        .typewriter {
+            font-size: 5rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .header-motivation {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .accordion-container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            margin-bottom: 0.5rem;
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 1.5rem 0;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #000;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .accordion-header:hover {
+            color: #333;
+        }
+
+        .accordion-header:focus {
+            /* outline: 2px solid greenyellow; */
+            outline-offset: 4px;
+        }
+
+        .accordion-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .accordion-icon::before,
+        .accordion-icon::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 2px;
+            background-color: #000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-icon::after {
+            transform: rotate(90deg);
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+            /* border-color: greenyellow; */
+            background-color: greenyellow;
+        }
+
+        .accordion-item.active .accordion-icon::after {
+            transform: rotate(0deg);
+            opacity: 0;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                        padding 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            padding: 0 0 2rem 0;
+            opacity: 1;
+        }
+
+        .accordion-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            font-weight: 300;
+        }
+
+        .cursor,
+        .dot {
+            display: inline-block;
+            width: 0.6ch; /* Platz reservieren */
+            text-align: left;
+        }
+
+        .cursor {
+            height: 1em;
+            width: 3px;
+            background-color: #ffffff;
+            animation: blink 0.75s step-end infinite;
+        }
+
+        .dot {
+            opacity: 0;
+            transform: scale(0);
+            color: greenyellow;
+        }
+
+        .dot.animate {
+            animation: dotPop 0.6s ease-out forwards;
+        }
+
+        @keyframes dotPop {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes blink {
+            from, to {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .typewriter {
+                font-size: 4rem;
+            }
+            .header-motivation {
+                font-size: 2.5rem;
+            }
+            .accordion-header {
+                font-size: 1.4rem;
+            }
+            .accordion-content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cursor {
+                animation: none;
+                opacity: 1;
+            }
+            .dot.animate {
+                animation: none;
+                opacity: 1;
+                transform: scale(1);
+            }
+            .accordion-content,
+            .accordion-icon {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <header role="banner" class="section section-white">
+        <h1 class="typewriter" id="typewriter" aria-label="Sustain-IT."><span class="cursor"></span></h1>
+    </header>
+
+    <main id="main-content" role="main" class="section section-black">
+        <article class="content">
+            <h2 class="header-motivation">
+                <span style="text-decoration: underline;">Webentwicklung</span><br>
+                sicher, nachhaltig und kundenorientiert
+            </h2>
+            
+            <div class="accordion-container" role="region" aria-label="Unsere Leistungen">
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="accordion-1">
+                        <span>Redesign & Neuentwicklung</span>
+                        <span class="accordion-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-content" id="accordion-1">
+                        <p>Wir gestalten Ihre digitale Präsenz neu – von der Konzeption bis zur Umsetzung. Moderne, responsive Designs, die Ihre Marke perfekt widerspiegeln und Ihre Nutzer begeistern.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="accordion-2">
+                        <span>Individuelle Webapplikationen</span>
+                        <span class="accordion-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-content" id="accordion-2">
+                        <p>Maßgeschneiderte Lösungen für Ihre spezifischen Anforderungen. Ob Business Auftritt, Dashboard oder Verwaltungstool – wir entwickeln skalierbare Applikationen, die perfekt zu Ihren Prozessen passen.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="accordion-3">
+                        <span>Optimierung & Wartung bestehender Systeme</span>
+                        <span class="accordion-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-content" id="accordion-3">
+                        <p>Performance-Verbesserungen, Sicherheitsupdates und kontinuierliche Weiterentwicklung.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <footer role="contentinfo" class="footer-info">
+            <p>
+                Max Schwitzky | Siedlerstr. 20 | 67434 Neustadt/ Weinstraße | 
+                <a href="mailto:kontakt@sustain-it.de">kontakt@sustain-it.de</a>
+            </p>
+        </footer>
+    </main>
+    
+    <script>
+        // Typewriter Animation
+        const text = 'Sustain-IT';
+        const container = document.getElementById('typewriter');
+        const cursor = container.querySelector('.cursor');
+        let index = 0;
+        
+        function type() {
+            if (index < text.length) {
+                const span = document.createElement('span');
+                span.textContent = text[index];
+                span.setAttribute('aria-hidden', 'true');
+                container.insertBefore(span, cursor);
+                index++;
+                setTimeout(type, 150);
+            } 
+            else {
+                cursor.style.display = 'none';
+
+                const dot = document.createElement('span');
+                dot.textContent = '.';
+                dot.className = 'dot';
+                dot.setAttribute('aria-hidden', 'true');
+
+                // Cursor wird ersetzt, nicht ergänzt
+                container.appendChild(dot);
+
+                requestAnimationFrame(() => {
+                    dot.classList.add('animate');
+                });
+            }
+        }
+        
+        type();
+
+        // Accordion Functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all accordions
+                document.querySelectorAll('.accordion-item').forEach(el => {
+                    el.classList.remove('active');
+                    el.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Open clicked accordion if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                    header.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
