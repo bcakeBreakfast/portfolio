@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CherrYX - Webentwicklung mit Pfiff</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -68,7 +70,7 @@
         }
 
         .nav-links a {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 500;
@@ -110,7 +112,7 @@
 
         .big-text {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(11rem, 32vw, 55rem);
+            font-size: clamp(8rem, 32vw, 55rem);
             font-weight: 900;
             letter-spacing: -0.02em;
             color: #0a0a0a;
@@ -158,8 +160,17 @@
         }
 
         @keyframes scrollDown {
-            0%, 100% { opacity: 1; top: 8px; }
-            50% { opacity: 0.3; top: 20px; }
+
+            0%,
+            100% {
+                opacity: 1;
+                top: 8px;
+            }
+
+            50% {
+                opacity: 0.3;
+                top: 20px;
+            }
         }
 
         /* Section 2 - Slogan */
@@ -442,7 +453,7 @@
             display: block;
         }
 
-        .feature-image::before {
+        /* .feature-image::before {
             content: '';
             position: absolute;
             top: -20px;
@@ -462,7 +473,7 @@
             height: 80px;
             border-bottom: 3px solid #2b2b2b;
             border-right: 3px solid #2b2b2b;
-        }
+        } */
 
         .feature-content {
             padding: 2rem 0;
@@ -558,7 +569,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: left 0.5s ease;
         }
 
@@ -594,6 +605,7 @@
             color: #444;
             font-size: 0.8rem;
             letter-spacing: 0.05em;
+            text-align: center;
         }
 
         /* Cherry decoration */
@@ -622,9 +634,19 @@
         }
 
         @keyframes cherryBounce {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-8px) rotate(3deg); }
-            75% { transform: translateY(-4px) rotate(-3deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-8px) rotate(3deg);
+            }
+
+            75% {
+                transform: translateY(-4px) rotate(-3deg);
+            }
         }
 
         /* Responsive */
@@ -659,6 +681,7 @@
         }
 
         @media (max-width: 768px) {
+
             .intro-section,
             .services-section,
             .feature-section,
@@ -672,6 +695,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -707,7 +731,9 @@
         <div class="intro-content">
             <div class="intro-label">Wer wir sind</div>
             <h2 class="intro-headline">Wir erschaffen digitale <span>Erlebnisse</span>, die begeistern</h2>
-            <p class="intro-text">Bei CherrYX verbinden wir technische Expertise mit kreativem Design. Jedes Projekt ist für uns eine neue Chance, etwas Einzigartiges zu schaffen – Websites, die nicht nur funktionieren, sondern Ihre Marke zum Leben erwecken.</p>
+            <p class="intro-text">Bei CherrYX verbinden wir technische Expertise mit kreativem Design. Jedes Projekt ist
+                für uns eine neue Chance, etwas Einzigartiges zu schaffen – Websites, die nicht nur funktionieren,
+                sondern Ihre Marke zum Leben erwecken.</p>
         </div>
     </section>
 
@@ -715,7 +741,7 @@
     <section class="services-section" id="services">
         <div class="services-header">
             <h2 class="services-title">Leistungen</h2>
-            <p class="services-subtitle">Von der ersten Idee bis zum Launch – wir begleiten Sie durch den gesamten Prozess.</p>
+            <p class="services-subtitle">Von der Idee bis zum Launch – ich begleite Sie.</p>
         </div>
         <div class="accordion">
             <div class="accordion-item">
@@ -726,7 +752,9 @@
                 </div>
                 <div class="accordion-content">
                     <div class="accordion-body">
-                        <p>Wir gestalten einzigartige, benutzerfreundliche Interfaces, die Ihre Marke perfekt repräsentieren. Von der ersten Skizze bis zum finalen Design – jedes Detail wird mit Sorgfalt durchdacht.</p>
+                        <p>Wir gestalten einzigartige, benutzerfreundliche Interfaces, die Ihre Marke perfekt
+                            repräsentieren. Von der ersten Skizze bis zum finalen Design – jedes Detail wird mit
+                            Sorgfalt durchdacht.</p>
                         <div class="accordion-tags">
                             <span class="accordion-tag">Figma</span>
                             <span class="accordion-tag">Prototyping</span>
@@ -744,7 +772,8 @@
                 </div>
                 <div class="accordion-content">
                     <div class="accordion-body">
-                        <p>Moderne, performante Frontends mit den neuesten Technologien. Wir setzen auf sauberen, wartbaren Code und erstklassige User Experience auf allen Geräten.</p>
+                        <p>Moderne, performante Frontends mit den neuesten Technologien. Wir setzen auf sauberen,
+                            wartbaren Code und erstklassige User Experience auf allen Geräten.</p>
                         <div class="accordion-tags">
                             <span class="accordion-tag">React</span>
                             <span class="accordion-tag">Vue.js</span>
@@ -762,7 +791,8 @@
                 </div>
                 <div class="accordion-content">
                     <div class="accordion-body">
-                        <p>Robuste, skalierbare Backend-Lösungen, die mit Ihrem Business wachsen. Sichere APIs, effiziente Datenbanken und zuverlässige Server-Infrastruktur.</p>
+                        <p>Robuste, skalierbare Backend-Lösungen, die mit Ihrem Business wachsen. Sichere APIs,
+                            effiziente Datenbanken und zuverlässige Server-Infrastruktur.</p>
                         <div class="accordion-tags">
                             <span class="accordion-tag">Node.js</span>
                             <span class="accordion-tag">Python</span>
@@ -780,7 +810,8 @@
                 </div>
                 <div class="accordion-content">
                     <div class="accordion-body">
-                        <p>Blitzschnelle Ladezeiten und Top-Rankings in Suchmaschinen. Wir optimieren Ihre Website für maximale Sichtbarkeit und beste User Experience.</p>
+                        <p>Blitzschnelle Ladezeiten und Top-Rankings in Suchmaschinen. Wir optimieren Ihre Website für
+                            maximale Sichtbarkeit und beste User Experience.</p>
                         <div class="accordion-tags">
                             <span class="accordion-tag">Core Web Vitals</span>
                             <span class="accordion-tag">Technical SEO</span>
@@ -800,9 +831,10 @@
                 <img src="image_front.png" alt="CherrYX Design">
             </div>
             <div class="feature-content">
-                <div class="feature-label">Unser Ansatz</div>
+                <!-- <div class="feature-label">Unser Ansatz</div> -->
                 <h3 class="feature-title">Kreativität trifft auf Präzision</h3>
-                <p class="feature-text">Wir glauben, dass großartiges Design mehr ist als nur Ästhetik. Es geht darum, Probleme zu lösen, Geschichten zu erzählen und echte Verbindungen zu schaffen.</p>
+                <p class="feature-text">Wir glauben, dass großartiges Design mehr ist als nur Ästhetik. Es geht darum,
+                    Probleme zu lösen, Geschichten zu erzählen und echte Verbindungen zu schaffen.</p>
                 <ul class="feature-list">
                     <li>Maßgeschneiderte Lösungen für jedes Projekt</li>
                     <li>Modernste Technologien & Best Practices</li>
@@ -815,8 +847,7 @@
 
     <!-- Section 6 - Contact -->
     <section class="contact-section" id="contact">
-        <div class="contact-label">Bereit für den nächsten Schritt?</div>
-        <h2 class="contact-title">Lassen Sie uns reden</h2>
+        <h2 class="contact-title">Sprich mich an</h2>
         <a href="mailto:hello@cherryx.de" class="contact-button">
             Projekt anfragen
             <span>→</span>
@@ -826,18 +857,18 @@
     <!-- Footer -->
     <footer>
         <div class="footer-logo">CherrYX</div>
-        <div class="footer-text">© 2025 CherrYX. Webentwicklung mit Pfiff.</div>
+        <div class="footer-text">© 2025 CherrYX. Webentwicklung</div>
     </footer>
 
     <!-- Cherry Decoration -->
     <svg class="cherry-deco" viewBox="0 0 100 100">
-        <circle cx="35" cy="70" r="18" fill="#c41e3a"/>
-        <circle cx="62" cy="68" r="18" fill="#a01830"/>
-        <ellipse cx="30" cy="62" rx="4" ry="6" fill="rgba(255,255,255,0.3)"/>
-        <ellipse cx="57" cy="60" rx="4" ry="6" fill="rgba(255,255,255,0.25)"/>
-        <path d="M35 52 Q45 20 55 50" stroke="#228b22" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <path d="M62 50 Q58 25 50 22" stroke="#228b22" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <ellipse cx="48" cy="18" rx="10" ry="6" fill="#2e8b2e"/>
+        <circle cx="35" cy="70" r="18" fill="#c41e3a" />
+        <circle cx="62" cy="68" r="18" fill="#a01830" />
+        <ellipse cx="30" cy="62" rx="4" ry="6" fill="rgba(255,255,255,0.3)" />
+        <ellipse cx="57" cy="60" rx="4" ry="6" fill="rgba(255,255,255,0.25)" />
+        <path d="M35 52 Q45 20 55 50" stroke="#228b22" stroke-width="3" fill="none" stroke-linecap="round" />
+        <path d="M62 50 Q58 25 50 22" stroke="#228b22" stroke-width="3" fill="none" stroke-linecap="round" />
+        <ellipse cx="48" cy="18" rx="10" ry="6" fill="#2e8b2e" />
     </svg>
 
     <script>
@@ -863,17 +894,17 @@
 
         // Accordion functionality
         const accordionHeaders = document.querySelectorAll('.accordion-header');
-        
+
         accordionHeaders.forEach(header => {
             header.addEventListener('click', () => {
                 const item = header.parentElement;
                 const isActive = item.classList.contains('active');
-                
+
                 // Close all items
                 document.querySelectorAll('.accordion-item').forEach(i => {
                     i.classList.remove('active');
                 });
-                
+
                 // Open clicked item if it wasn't active
                 if (!isActive) {
                     item.classList.add('active');
@@ -883,7 +914,7 @@
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -898,4 +929,5 @@
         });
     </script>
 </body>
+
 </html>
