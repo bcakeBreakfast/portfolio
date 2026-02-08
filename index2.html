@@ -290,6 +290,82 @@
             width: 100%;
         }
 
+        /* Language Switch */
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-left: 1rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            color: rgba(0,0,0,0.4);
+            transition: color 0.3s ease;
+            padding: 0;
+        }
+
+        .lang-btn.active {
+            color: #0a0a0a;
+        }
+
+        .lang-btn:hover {
+            color: #0a0a0a;
+        }
+
+        nav.scrolled .lang-btn {
+            color: rgba(255,255,255,0.4);
+        }
+
+        nav.scrolled .lang-btn.active {
+            color: #fff;
+        }
+
+        nav.scrolled .lang-btn:hover {
+            color: #fff;
+        }
+
+        .lang-divider {
+            color: rgba(0,0,0,0.3);
+            font-size: 0.85rem;
+        }
+
+        nav.scrolled .lang-divider {
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* Mobile Language Switch */
+        .lang-switch-mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .lang-switch-mobile .lang-btn {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .lang-switch-mobile .lang-btn.active {
+            color: #d4af37;
+        }
+
+        .lang-switch-mobile .lang-btn:hover {
+            color: #d4af37;
+        }
+
+        .lang-switch-mobile .lang-divider {
+            color: rgba(255,255,255,0.3);
+            font-size: 1.2rem;
+        }
+
         /* Hamburger-Menü */
         .hamburger-menu {
             display: none;
@@ -407,7 +483,7 @@
 
         .big-text {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(8rem, 32vw, 55rem);
+            font-size: clamp(11rem, 32vw, 55rem);
             font-weight: 900;
             letter-spacing: -0.02em;
             color: #0a0a0a;
@@ -662,7 +738,7 @@
         }
 
         .accordion-body {
-            padding: 0 2rem 2.5rem 6rem;
+            padding: 2rem 2rem 2.5rem 6rem;
             color: #888;
             line-height: 1.8;
             font-size: 0.95rem;
@@ -951,34 +1027,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* Cherry decoration - Back to top button */
-        .cherry-deco {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 45px;
-            height: 45px;
-            z-index: 100;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-        }
-
-        .cherry-deco.visible {
-            opacity: 1;
-            transform: translateY(0);
-            animation: cherryBounce 2s ease-in-out infinite;
-        }
-
-        .cherry-deco:hover {
-            animation-play-state: paused;
-            transform: scale(1.1);
-        }
-
         @keyframes cherryBounce {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             25% { transform: translateY(-8px) rotate(3deg); }
@@ -1048,10 +1096,15 @@
     <nav role="navigation" aria-label="Hauptnavigation">
         <a href="#" class="nav-logo" aria-label="CherrYX - Zur Startseite">CherrYX</a>
         <ul class="nav-links" role="menubar">
-            <li role="none"><a href="#services" role="menuitem">Leistungen</a></li>
-            <li role="none"><a href="#about" role="menuitem">Über uns</a></li>
-            <li role="none"><a href="#contact" role="menuitem">Kontakt</a></li>
-            <li role="none"><a href="impressum.html" role="menuitem">Impressum</a></li>
+            <li role="none"><a href="#services" role="menuitem" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+            <li role="none"><a href="#about" role="menuitem" data-de="Mein Ansatz" data-en="My Approach">Mein Ansatz</a></li>
+            <li role="none"><a href="#contact" role="menuitem" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+            <li role="none"><a href="impressum.html" role="menuitem" data-de="Impressum" data-en="Imprint">Impressum</a></li>
+            <li role="none" class="lang-switch">
+                <button class="lang-btn active" data-lang="de" aria-label="Deutsch">DE</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            </li>
         </ul>
         
         <!-- Hamburger-Menü -->
@@ -1064,10 +1117,15 @@
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
         <ul class="mobile-menu-links" role="menu">
-            <li role="none"><a href="#services" role="menuitem">Leistungen</a></li>
-            <li role="none"><a href="#about" role="menuitem">Über uns</a></li>
-            <li role="none"><a href="#contact" role="menuitem">Kontakt</a></li>
-            <li role="none"><a href="impressum.html" role="menuitem">Impressum</a></li>
+            <li role="none"><a href="#services" role="menuitem" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+            <li role="none"><a href="#about" role="menuitem" data-de="Mein Ansatz" data-en="My Approach">Mein Ansatz</a></li>
+            <li role="none"><a href="#contact" role="menuitem" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+            <li role="none"><a href="impressum.html" role="menuitem" data-de="Impressum" data-en="Imprint">Impressum</a></li>
+            <li role="none" class="lang-switch-mobile">
+                <button class="lang-btn active" data-lang="de" aria-label="Deutsch">DE</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            </li>
         </ul>
     </div>
 
@@ -1086,7 +1144,7 @@
         </div>
         <div class="slogan-container">
             <h1 class="word-webentwicklung">
-                <span class="word-web">WEB</span><span class="word-entwicklung">ENTWICKLUNG</span>
+                <span class="word-web" data-de="WEB" data-en="WEB">WEB</span><span class="word-entwicklung" data-de="ENTWICKLUNG" data-en="DEVELOPMENT">ENTWICKLUNG</span>
             </h1>
         </div>
     </section>
@@ -1095,30 +1153,29 @@
     <main id="main-content">
     <section class="intro-section" aria-labelledby="intro-headline">
         <div class="intro-content">
-            <p class="intro-label">Wer ich bin</p>
-            <h2 id="intro-headline" class="intro-headline">Ich erschaffe digitale <span>Erlebnisse</span>, die begeistern</h2>
-            <p class="intro-text">Bei CherrYX verbinde ich technische Expertise mit kreativem Design. Jedes Projekt ist für mich eine neue Chance, etwas Einzigartiges zu schaffen – Websites, die nicht nur funktionieren, sondern Ihre Marke zum Leben erwecken.</p>
+            <p class="intro-label" data-de="Wer ich bin" data-en="Who I am">Wer ich bin</p>
+            <h2 id="intro-headline" class="intro-headline" data-de="Ich erschaffe digitale <span>Erlebnisse</span>, die begeistern" data-en="I create digital <span>experiences</span> that inspire">Ich erschaffe digitale <span>Erlebnisse</span>, die begeistern</h2>
+            <p class="intro-text" data-de="Bei CherrYX verbinde ich technische Expertise mit kreativem Design. Jedes Projekt ist für mich eine neue Chance, etwas Einzigartiges zu schaffen – Websites, die nicht nur funktionieren, sondern Ihre Marke zum Leben erwecken." data-en="At CherrYX, I combine technical expertise with creative design. Every project is a new opportunity to create something unique – websites that don't just work, but bring your brand to life.">Bei CherrYX verbinde ich technische Expertise mit kreativem Design. Jedes Projekt ist für mich eine neue Chance, etwas Einzigartiges zu schaffen – Websites, die nicht nur funktionieren, sondern Ihre Marke zum Leben erwecken.</p>
         </div>
     </section>
 
     <!-- Section 4 - Services Accordion -->
     <section class="services-section" id="services" aria-labelledby="services-title">
         <div class="services-header">
-            <h2 id="services-title" class="services-title">Leistungen</h2>
-            <p class="services-subtitle">Von der ersten Idee bis zum Launch – ich begleite Sie durch den gesamten Prozess.</p>
+            <h2 id="services-title" class="services-title" data-de="Leistungen" data-en="Services">Leistungen</h2>
+            <p class="services-subtitle" data-de="Von der ersten Idee bis zum Launch – ich begleite Sie durch den gesamten Prozess." data-en="From the first idea to launch – I guide you through the entire process.">Von der ersten Idee bis zum Launch – ich begleite Sie durch den gesamten Prozess.</p>
         </div>
         <div class="accordion" role="list">
             <article class="accordion-item" role="listitem">
                 <button class="accordion-header" aria-expanded="false" aria-controls="accordion-content-1" id="accordion-header-1">
                     <span class="accordion-number" aria-hidden="true">01</span>
-                    <span class="accordion-title">Webdesign & UI/UX</span>
+                    <span class="accordion-title" data-de="Webdesign & UI/UX" data-en="Web Design & UI/UX">Webdesign & UI/UX</span>
                     <span class="accordion-icon" aria-hidden="true"></span>
                 </button>
                 <div class="accordion-content" id="accordion-content-1" role="region" aria-labelledby="accordion-header-1">
                     <div class="accordion-body">
-                        <p>Ich gestalte einzigartige, benutzerfreundliche Interfaces, die Ihre Marke perfekt repräsentieren. Von der ersten Skizze bis zum finalen Design – jedes Detail wird mit Sorgfalt durchdacht.</p>
+                        <p data-de="Ich gestalte einzigartige, benutzerfreundliche Interfaces, die Ihre Marke perfekt repräsentieren. Von der ersten Skizze bis zum finalen Design – jedes Detail wird mit Sorgfalt durchdacht." data-en="I create unique, user-friendly interfaces that perfectly represent your brand. From the first sketch to the final design – every detail is carefully considered.">Ich gestalte einzigartige, benutzerfreundliche Interfaces, die Ihre Marke perfekt repräsentieren. Von der ersten Skizze bis zum finalen Design – jedes Detail wird mit Sorgfalt durchdacht.</p>
                         <div class="accordion-tags" aria-label="Technologien">
-                            <!-- <span class="accordion-tag">Figma</span> -->
                             <span class="accordion-tag">Prototyping</span>
                             <span class="accordion-tag">RE-DESIGN</span>
                             <span class="accordion-tag">User Research</span>
@@ -1129,12 +1186,12 @@
             <article class="accordion-item" role="listitem">
                 <button class="accordion-header" aria-expanded="false" aria-controls="accordion-content-2" id="accordion-header-2">
                     <span class="accordion-number" aria-hidden="true">02</span>
-                    <span class="accordion-title">Frontend Entwicklung</span>
+                    <span class="accordion-title" data-de="Frontend Entwicklung" data-en="Frontend Development">Frontend Entwicklung</span>
                     <span class="accordion-icon" aria-hidden="true"></span>
                 </button>
                 <div class="accordion-content" id="accordion-content-2" role="region" aria-labelledby="accordion-header-2">
                     <div class="accordion-body">
-                        <p>Moderne, performante Frontends – maßgeschneidert für Ihr Projekt. Ich setze auf sauberen, wartbaren Code, erstklassige User Experience und barrierefreie Zugänglichkeit auf allen Geräten.</p>
+                        <p data-de="Moderne, performante Frontends – maßgeschneidert für Ihr Projekt. Ich setze auf sauberen, wartbaren Code, erstklassige User Experience und barrierefreie Zugänglichkeit auf allen Geräten." data-en="Modern, high-performance frontends – tailored to your project. I focus on clean, maintainable code, first-class user experience, and accessible design on all devices.">Moderne, performante Frontends – maßgeschneidert für Ihr Projekt. Ich setze auf sauberen, wartbaren Code, erstklassige User Experience und barrierefreie Zugänglichkeit auf allen Geräten.</p>
                         <div class="accordion-tags" aria-label="Technologien">
                             <span class="accordion-tag">CSS-Frameworks</span>
                             <span class="accordion-tag">Bootstrap</span>
@@ -1148,12 +1205,12 @@
             <article class="accordion-item" role="listitem">
                 <button class="accordion-header" aria-expanded="false" aria-controls="accordion-content-3" id="accordion-header-3">
                     <span class="accordion-number" aria-hidden="true">03</span>
-                    <span class="accordion-title">Backend & Datenbanken</span>
+                    <span class="accordion-title" data-de="Backend & Datenbanken" data-en="Backend & Databases">Backend & Datenbanken</span>
                     <span class="accordion-icon" aria-hidden="true"></span>
                 </button>
                 <div class="accordion-content" id="accordion-content-3" role="region" aria-labelledby="accordion-header-3">
                     <div class="accordion-body">
-                        <p>Robuste, skalierbare Backend-Lösungen, die mit Ihrem Business wachsen. Sichere APIs, effiziente Datenbanken und zuverlässige Server-Infrastruktur.</p>
+                        <p data-de="Robuste, skalierbare Backend-Lösungen, die mit Ihrem Business wachsen. Sichere APIs, effiziente Datenbanken und zuverlässige Server-Infrastruktur." data-en="Robust, scalable backend solutions that grow with your business. Secure APIs, efficient databases, and reliable server infrastructure.">Robuste, skalierbare Backend-Lösungen, die mit Ihrem Business wachsen. Sichere APIs, effiziente Datenbanken und zuverlässige Server-Infrastruktur.</p>
                         <div class="accordion-tags" aria-label="Technologien">
                             <span class="accordion-tag">Python</span>
                             <span class="accordion-tag">PostgreSQL</span>
@@ -1164,12 +1221,12 @@
             <article class="accordion-item" role="listitem">
                 <button class="accordion-header" aria-expanded="false" aria-controls="accordion-content-4" id="accordion-header-4">
                     <span class="accordion-number" aria-hidden="true">04</span>
-                    <span class="accordion-title">Performance & SEO</span>
+                    <span class="accordion-title" data-de="Performance & SEO" data-en="Performance & SEO">Performance & SEO</span>
                     <span class="accordion-icon" aria-hidden="true"></span>
                 </button>
                 <div class="accordion-content" id="accordion-content-4" role="region" aria-labelledby="accordion-header-4">
                     <div class="accordion-body">
-                        <p>Blitzschnelle Ladezeiten und Top-Rankings in Suchmaschinen. Ich optimiere Ihre Website für maximale Sichtbarkeit und beste User Experience.</p>
+                        <p data-de="Blitzschnelle Ladezeiten und Top-Rankings in Suchmaschinen. Ich optimiere Ihre Website für maximale Sichtbarkeit und beste User Experience." data-en="Lightning-fast loading times and top search engine rankings. I optimize your website for maximum visibility and the best user experience.">Blitzschnelle Ladezeiten und Top-Rankings in Suchmaschinen. Ich optimiere Ihre Website für maximale Sichtbarkeit und beste User Experience.</p>
                         <div class="accordion-tags" aria-label="Technologien">
                             <span class="accordion-tag">Core Web Vitals</span>
                             <span class="accordion-tag">Technical SEO</span>
@@ -1189,14 +1246,13 @@
                 <img src="g2.svg" alt="CherrYX - Saftige Kirsche als Symbol für frische Webentwicklung" loading="lazy">
             </div>
             <div class="feature-content">
-                <p class="feature-label">Mein Ansatz</p>
-                <h2 id="feature-title" class="feature-title">Kreativität trifft auf Präzision</h2>
-                <p class="feature-text">Ich glaube, dass großartiges Design mehr ist als nur Ästhetik. Es geht darum, Probleme zu lösen, Geschichten zu erzählen und echte Verbindungen zu schaffen.</p>
+                <p class="feature-label" data-de="Mein Ansatz" data-en="My Approach">Mein Ansatz</p>
+                <h2 id="feature-title" class="feature-title" data-de="Professionell. Durchdacht. Zuverlässig." data-en="Professional. Thoughtful. Reliable.">Professionell. Durchdacht. Zuverlässig.</h2>
+                <p class="feature-text" data-de="Gute Webentwicklung verbindet – Ihre Marke mit Ihren Besuchern. Accessibility ist dabei Standard, nicht Option. Präzises Design transportiert Ihre Werte und schafft Vertrauen." data-en="Good web development connects – your brand with your visitors. Accessibility is standard, not optional. Precise design conveys your values and builds trust.">Gute Webentwicklung verbindet – Ihre Marke mit Ihren Besuchern. Accessibility ist dabei Standard, nicht Option. Präzises Design transportiert Ihre Werte und schafft Vertrauen.</p>
                 <ul class="feature-list" role="list">
-                    <li>Maßgeschneiderte Lösungen für jedes Projekt</li>
-                    <li>Modernste Technologien & Best Practices</li>
-                    <li>Persönliche Betreuung von A bis Z</li>
-                    <li>Schnelle Ladezeiten & Mobile First</li>
+                    <li data-de="Maßgeschneiderte Lösungen für jedes Projekt" data-en="Tailored solutions for every project">Maßgeschneiderte Lösungen für jedes Projekt</li>
+                    <li data-de="Modernste Technologien & Best Practices" data-en="Cutting-edge technologies & best practices">Modernste Technologien & Best Practices</li>
+                    <li data-de="Persönliche Betreuung von A bis Z" data-en="Personal support from A to Z">Persönliche Betreuung von A bis Z</li>
                 </ul>
             </div>
         </div>
@@ -1204,37 +1260,37 @@
 
     <!-- Section 6 - Contact -->
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <p class="contact-label">Bereit für den nächsten Schritt?</p>
-        <h2 id="contact-title" class="contact-title">Projekt starten</h2>
+        <p class="contact-label" data-de="Bereit für den nächsten Schritt?" data-en="Ready for the next step?">Bereit für den nächsten Schritt?</p>
+        <h2 id="contact-title" class="contact-title" data-de="Projekt starten" data-en="Start a Project">Projekt starten</h2>
         
         <form class="contact-form" id="contactForm" aria-label="Kontaktformular">
             <!-- Honeypot Spam-Schutz (für User unsichtbar) -->
             <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
             
             <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Ihr Name" minlength="2">
+                <label for="name" data-de="Name" data-en="Name">Name</label>
+                <input type="text" id="name" name="name" required data-placeholder-de="Ihr Name" data-placeholder-en="Your name" placeholder="Ihr Name" minlength="2">
             </div>
             <div class="form-group">
-                <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" required placeholder="ihre@email.de">
+                <label for="email" data-de="E-Mail" data-en="Email">E-Mail</label>
+                <input type="email" id="email" name="email" required data-placeholder-de="ihre@email.de" data-placeholder-en="your@email.com" placeholder="ihre@email.de">
             </div>
             <div class="form-group">
-                <label for="message">Nachricht</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Erzählen Sie mir von Ihrem Projekt..." minlength="10"></textarea>
+                <label for="message" data-de="Nachricht" data-en="Message">Nachricht</label>
+                <textarea id="message" name="message" rows="5" required data-placeholder-de="Erzählen Sie mir von Ihrem Projekt..." data-placeholder-en="Tell me about your project..." placeholder="Erzählen Sie mir von Ihrem Projekt..." minlength="10"></textarea>
             </div>
             <button type="submit" class="contact-button" id="submitBtn">
-                <span class="btn-text">Nachricht senden</span>
-                <span class="btn-loading" style="display:none;">Wird gesendet...</span>
+                <span class="btn-text" data-de="Nachricht senden" data-en="Send message">Nachricht senden</span>
+                <span class="btn-loading" style="display:none;" data-de="Wird gesendet..." data-en="Sending...">Wird gesendet...</span>
                 <span aria-hidden="true">→</span>
             </button>
         </form>
         
         <!-- Erfolgsmeldung -->
-        <div class="form-message success" id="successMessage" role="alert">
+        <div class="form-message success" id="successMessage" role="alert" data-de="✓ Vielen Dank! Ihre Nachricht wurde gesendet. Ich melde mich in Kürze." data-en="✓ Thank you! Your message has been sent. I'll get back to you soon.">
             ✓ Vielen Dank! Ihre Nachricht wurde gesendet. Ich melde mich in Kürze.
         </div>
-        <div class="form-message error" id="errorMessage" role="alert">
+        <div class="form-message error" id="errorMessage" role="alert" data-de="✗ Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie direkt an hello@cherryx.de" data-en="✗ Something went wrong. Please try again or write directly to hello@cherryx.de">
             ✗ Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie direkt an hello@cherryx.de
         </div>
     </section>
@@ -1243,28 +1299,12 @@
     <!-- Footer -->
     <footer role="contentinfo">
         <div class="footer-logo" aria-hidden="true">CherrYX</div>
-        <p class="footer-text">© 2026 CherrYX. Webentwicklung.</p>
+        <p class="footer-text" data-de="© 2026 CherrYX. Webentwicklung." data-en="© 2026 CherrYX. Web Development.">© 2026 CherrYX. Webentwicklung.</p>
     </footer>
-
-    <!-- Cherry Decoration - Back to top button -->
-    <button class="cherry-deco" aria-label="Zurück nach oben" title="Zurück nach oben">
-        <svg viewBox="0 0 100 100" aria-hidden="true">
-            <circle cx="35" cy="70" r="18" fill="#ea000a"/>
-            <circle cx="62" cy="68" r="18" fill="#ea000a"/>
-            <ellipse cx="30" cy="62" rx="4" ry="6" fill="rgba(255,255,255,0.3)"/>
-            <ellipse cx="57" cy="60" rx="4" ry="6" fill="rgba(255,255,255,0.25)"/>
-            <path d="M35 52 Q45 20 55 50" stroke="#228b22" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path d="M62 50 Q58 25 50 22" stroke="#228b22" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <ellipse cx="48" cy="18" rx="10" ry="6" fill="#2e8b2e"/>
-        </svg>
-    </button>
 
     <script nonce="<?php echo $nonce; ?>">
         // Navigation scroll effect
         const nav = document.querySelector('nav');
-        const cherry = document.querySelector('.cherry-deco');
-        const sloganSection = document.querySelector('.slogan-section');
-
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
                 nav.classList.add('scrolled');
@@ -1272,12 +1312,6 @@
                 nav.classList.remove('scrolled');
             }
 
-            const sloganRect = sloganSection.getBoundingClientRect();
-            if (sloganRect.top < window.innerHeight * 0.5) {
-                cherry.classList.add('visible');
-            } else {
-                cherry.classList.remove('visible');
-            }
         });
 
         // Hamburger-Menü
@@ -1359,12 +1393,6 @@
             });
         });
 
-        // Cherry click scrolls to top
-        cherry.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            document.querySelector('.skip-link').focus();
-        });
-
         // Kontaktformular AJAX Submit
         const contactForm = document.getElementById('contactForm');
         const submitBtn = document.getElementById('submitBtn');
@@ -1410,6 +1438,63 @@
             btnLoading.style.display = 'none';
             submitBtn.disabled = false;
         });
+
+        // Language Switcher
+        let currentLang = 'de';
+        const langBtns = document.querySelectorAll('.lang-btn');
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Update active state on buttons
+            langBtns.forEach(btn => {
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-de][data-en]').forEach(el => {
+                const text = el.dataset[lang];
+                if (text) {
+                    // Check if text contains HTML tags
+                    if (text.includes('<')) {
+                        el.innerHTML = text;
+                    } else {
+                        el.textContent = text;
+                    }
+                }
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-placeholder-de][data-placeholder-en]').forEach(el => {
+                const placeholder = el.dataset[`placeholder${lang.charAt(0).toUpperCase() + lang.slice(1)}`];
+                if (placeholder) {
+                    el.placeholder = placeholder;
+                }
+            });
+
+            // Save preference
+            localStorage.setItem('cherryx-lang', lang);
+        }
+
+        // Add click handlers to all language buttons
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                switchLanguage(btn.dataset.lang);
+            });
+        });
+
+        // Check for saved language preference
+        const savedLang = localStorage.getItem('cherryx-lang');
+        if (savedLang && (savedLang === 'de' || savedLang === 'en')) {
+            switchLanguage(savedLang);
+        }
     </script>
 </body>
 </html>
