@@ -517,13 +517,21 @@
             font-weight: 600;
             letter-spacing: -0.02em;
             color: #ffffff;
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.2em;
+        }
+
+        .typewriter-line {
+            display: block;
+            min-height: 1.2em;
         }
 
         .cursor {
             display: inline-block;
             width: 3px;
-            height: 0.8em;
+            height: 0.9em;
             background-color: #ffffff;
             margin-left: 2px;
             animation: blink 0.75s step-end infinite;
@@ -585,7 +593,7 @@
             font-size: 0.75rem;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: #d4af37;
+            color: #996f00;
             margin-bottom: 2rem;
             display: flex;
             align-items: center;
@@ -596,7 +604,7 @@
             content: '';
             width: 40px;
             height: 1px;
-            background: #d4af37;
+            background: #996f00;
         }
 
         .intro-headline {
@@ -608,7 +616,7 @@
         }
 
         .intro-headline span {
-            color: #d4af37;
+            color: #996f00;
         }
 
         .intro-text {
@@ -641,7 +649,7 @@
         }
 
         .services-subtitle {
-            color: #ffffff;
+            color: #b0b0b0;
             max-width: 400px;
             line-height: 1.8;
         }
@@ -704,7 +712,7 @@
         .accordion-number {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 1.5rem;
-            color: white;
+            color: #888;
             transition: color 0.3s ease;
         }
 
@@ -799,12 +807,12 @@
 
         /* Modern Feature Section with SVG Background */
         .feature-section {
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             background: #ffffff;
-            padding: 8rem 5%;
+            padding: 10rem 5%;
             position: relative;
             overflow: hidden;
         }
@@ -828,11 +836,12 @@
         .feature-wrapper.feature-modern {
             position: relative;
             z-index: 1;
-            max-width: 1200px;
+            max-width: 900px;
             width: 100%;
             display: flex;
             flex-direction: column;
             gap: 3rem;
+            margin: 0 auto;
         }
 
         .feature-header {
@@ -844,7 +853,7 @@
             font-size: 0.75rem;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: #d4af37;
+            color: #996f00;
             display: flex;
             align-items: center;
             gap: 1rem;
@@ -854,32 +863,28 @@
             content: '';
             width: 40px;
             height: 1px;
-            background: #d4af37;
+            background: #996f00;
         }
 
         .feature-main {
-            text-align: center;
+            text-align: left;
             padding: 2rem 0;
         }
 
         .feature-title-large {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 10vw, 8rem);
-            line-height: 1;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.1;
             color: #0a0a0a;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem 1rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .title-word {
-            display: inline-block;
+            display: inline;
         }
 
         .title-accent {
-            color: #d4af37;
+            color: #996f00;
         }
 
         .feature-text-centered {
@@ -887,27 +892,24 @@
             line-height: 2;
             color: #0a0a0a;
             max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
+            text-align: left;
         }
 
         /* Keywords als Labels */
         .feature-keywords {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
-            margin-top: 3rem;
-            padding-top: 3rem;
-            border-top: 1px solid #e0e0e0;
+            margin-top: 2rem;
         }
 
         .keyword-label {
             background: #0a0a0a;
             color: #ffffff;
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 500;
             letter-spacing: 0.05em;
             padding: 0.8rem 1.5rem;
@@ -915,21 +917,22 @@
         }
 
         @media (max-width: 768px) {
+            .feature-title-large {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .title-word {
+                display: block;
+            }
+
             .feature-keywords {
                 flex-direction: column;
-                align-items: stretch;
-                max-width: 300px;
-                margin-left: auto;
-                margin-right: auto;
+                align-items: flex-start;
             }
 
             .keyword-label {
                 text-align: center;
-            }
-
-            .feature-title-large {
-                flex-direction: column;
-                gap: 0.2rem;
             }
         }
 
@@ -1131,7 +1134,7 @@
         }
 
         .footer-text {
-            color: #444;
+            color: #888;
             font-size: 0.8rem;
             letter-spacing: 0.05em;
         }
@@ -1246,7 +1249,10 @@
     <!-- Section 2 - Slogan mit Typewriter -->
     <section class="slogan-section" aria-label="Slogan">
         <div class="slogan-container">
-            <h1 class="typewriter" id="typewriter" aria-label="Sustain-Development."><span class="cursor"></span></h1>
+            <h1 class="typewriter" id="typewriter" aria-label="Sustain Development.">
+                <span class="typewriter-line" id="typewriter-line1"><span class="cursor"></span></span>
+                <span class="typewriter-line" id="typewriter-line2"></span>
+            </h1>
         </div>
     </section>
 
@@ -1400,7 +1406,8 @@
         
         <form class="contact-form" id="contactForm" aria-label="Kontaktformular">
             <!-- Honeypot Spam-Schutz (für User unsichtbar) -->
-            <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+            <label for="website" class="honeypot">Website</label>
+            <input type="text" id="website" name="website" class="honeypot" tabindex="-1" autocomplete="off">
             
             <div class="form-group">
                 <label for="name" data-de="Name" data-en="Name">Name</label>
@@ -1449,35 +1456,56 @@
 
         });
 
-        // Typewriter Animation
-        const typewriterText = 'Sustain-Development';
-        const typewriterContainer = document.getElementById('typewriter');
-        const cursorEl = typewriterContainer.querySelector('.cursor');
-        let typeIndex = 0;
-        const sustainLength = 7; // "Sustain" hat 7 Buchstaben
+        // Typewriter Animation - Zwei Zeilen
+        const line1Text = 'Sustain';
+        const line2Text = 'Development';
+        const line1Container = document.getElementById('typewriter-line1');
+        const line2Container = document.getElementById('typewriter-line2');
+        let cursorEl = line1Container.querySelector('.cursor');
+        let charIndex = 0;
+        let currentLine = 1;
         
         function typeWrite() {
-            if (typeIndex < typewriterText.length) {
-                const span = document.createElement('span');
-                span.textContent = typewriterText[typeIndex];
-                span.setAttribute('aria-hidden', 'true');
-                // Färbe "Sustain" (erste 7 Buchstaben) in gold
-                if (typeIndex < sustainLength) {
+            if (currentLine === 1) {
+                // Erste Zeile: Sustain
+                if (charIndex < line1Text.length) {
+                    const span = document.createElement('span');
+                    span.textContent = line1Text[charIndex];
+                    span.setAttribute('aria-hidden', 'true');
                     span.style.color = '#d4af37';
+                    line1Container.insertBefore(span, cursorEl);
+                    charIndex++;
+                    setTimeout(typeWrite, 150);
+                } else {
+                    // Pause nach Sustain, dann Cursor zur zweiten Zeile
+                    charIndex = 0;
+                    currentLine = 2;
+                    // Cursor von Zeile 1 entfernen und in Zeile 2 einfügen
+                    line1Container.removeChild(cursorEl);
+                    line2Container.appendChild(cursorEl);
+                    setTimeout(typeWrite, 600);
                 }
-                typewriterContainer.insertBefore(span, cursorEl);
-                typeIndex++;
-                setTimeout(typeWrite, 150);
             } else {
-                cursorEl.style.display = 'none';
-                const dot = document.createElement('span');
-                dot.textContent = '●';
-                dot.className = 'dot';
-                dot.setAttribute('aria-hidden', 'true');
-                typewriterContainer.appendChild(dot);
-                requestAnimationFrame(() => {
-                    dot.classList.add('animate');
-                });
+                // Zweite Zeile: Development
+                if (charIndex < line2Text.length) {
+                    const span = document.createElement('span');
+                    span.textContent = line2Text[charIndex];
+                    span.setAttribute('aria-hidden', 'true');
+                    line2Container.insertBefore(span, cursorEl);
+                    charIndex++;
+                    setTimeout(typeWrite, 150);
+                } else {
+                    // Fertig - Punkt hinzufügen
+                    cursorEl.style.display = 'none';
+                    const dot = document.createElement('span');
+                    dot.textContent = '●';
+                    dot.className = 'dot';
+                    dot.setAttribute('aria-hidden', 'true');
+                    line2Container.appendChild(dot);
+                    requestAnimationFrame(() => {
+                        dot.classList.add('animate');
+                    });
+                }
             }
         }
         
