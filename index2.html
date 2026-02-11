@@ -514,7 +514,7 @@
         /* Typewriter Animation */
         .typewriter {
             font-family: 'Open Sans', sans-serif;
-            font-size: clamp(2rem, 6vw, 5rem);
+            font-size: clamp(3rem, 6vw, 5rem);
             font-weight: 600;
             color: #ffffff;
             display: flex;
@@ -902,11 +902,11 @@
             background: #000000;
             color: #ffffff;
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 1.2rem;
             font-weight: 500;
             letter-spacing: 0.05em;
             padding: 0.8rem 1.5rem;
-            border-radius: 6px;
+            border-radius: 30px;
             flex: 0 1 auto; /* Verhindert unterschiedliche Breiten */
             text-align: center;
             white-space: nowrap; /* Verhindert Umbruch innerhalb eines Labels */
@@ -928,7 +928,7 @@
             }
 
             .keyword-label {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 padding: 0.7rem 1.2rem;
                 flex: 0 1 auto;
                 min-width: fit-content; /* Labels passen sich dem Inhalt an */
@@ -1087,6 +1087,73 @@
             display: block;
         }
 
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #111;
+            border-top: 1px solid #2a2a2a;
+            padding: 1.2rem 5%;
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .cookie-banner.show {
+            display: flex;
+        }
+
+        .cookie-banner p {
+            color: #999;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .cookie-banner a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        .cookie-banner a:hover {
+            text-decoration: underline;
+        }
+
+        .cookie-btn {
+            background: #d4af37;
+            color: #0a0a0a;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .cookie-btn:hover {
+            background: #fff;
+        }
+
+        @media (max-width: 600px) {
+            .cookie-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-banner p {
+                min-width: 100%;
+            }
+        }
+
         .contact-button {
             display: inline-flex;
             align-items: center;
@@ -1220,6 +1287,7 @@
             <li role="none"><a href="#about" role="menuitem" data-de="Mein Ansatz" data-en="My Approach">Mein Ansatz</a></li>
             <li role="none"><a href="#contact" role="menuitem" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
             <li role="none"><a href="impressum.html" role="menuitem" data-de="Impressum" data-en="Imprint">Impressum</a></li>
+            <li role="none"><a href="datenschutz.html" role="menuitem" data-de="Datenschutz" data-en="Privacy">Datenschutz</a></li>
             <li role="none" class="lang-switch">
                 <button class="lang-btn active" data-lang="de" aria-label="Deutsch">DE</button>
                 <span class="lang-divider">/</span>
@@ -1241,6 +1309,7 @@
             <li role="none"><a href="#about" role="menuitem" data-de="Mein Ansatz" data-en="My Approach">Mein Ansatz</a></li>
             <li role="none"><a href="#contact" role="menuitem" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
             <li role="none"><a href="impressum.html" role="menuitem" data-de="Impressum" data-en="Imprint">Impressum</a></li>
+            <li role="none"><a href="datenschutz.html" role="menuitem" data-de="Datenschutz" data-en="Privacy">Datenschutz</a></li>
             <li role="none" class="lang-switch-mobile">
                 <button class="lang-btn active" data-lang="de" aria-label="Deutsch">DE</button>
                 <span class="lang-divider">/</span>
@@ -1251,7 +1320,8 @@
 
     <!-- Section 1 - Hero -->
     <section class="hero" aria-label="Hero">
-        <span class="big-text" role="img" aria-label="CherrYX Logo">CherrYX</span>
+        <!-- <span class="big-text" role="img" aria-label="CherrYX Logo">CherrYX</span> -->
+        <img src="logo.png" style="width:100%; height:auto;" />
     </section>
 
     <!-- Section 2 - Slogan mit Typewriter -->
@@ -1270,7 +1340,7 @@
         <div class="intro-content">
             <p class="intro-label" data-de="Wer ich bin" data-en="Who I am">Wer ich bin</p>
             <h2 id="intro-headline" class="intro-headline" data-de="Ich erschaffe digitale <span>Erlebnisse</span>, die begeistern" data-en="I create digital <span>experiences</span> that inspire">Ich erschaffe digitale <span>Erlebnisse</span>, die begeistern</h2>
-            <p class="intro-text" data-de="Bei CherrYX verbinde ich technische Expertise mit kreativem Design. Jedes Projekt ist für mich eine neue Chance, etwas Einzigartiges zu schaffen – Websites, die nicht nur funktionieren, sondern Ihre Marke zum Leben erwecken." data-en="At CherrYX, I combine technical expertise with creative design. Every project is a new opportunity to create something unique – websites that don't just work, but bring your brand to life.">Bei CherrYX verbinde ich technische Expertise mit kreativem Design. Jedes Projekt ist für mich eine neue Chance, etwas Einzigartiges zu schaffen – Websites, die nicht nur funktionieren, sondern Ihre Marke zum Leben erwecken.</p>
+            <p class="intro-text" data-de="Ich verbinde technische Expertise mit kreativem Design. Jedes Projekt ist für mich eine neue Chance, etwas Einzigartiges zu schaffen – Websites, die nicht nur funktionieren, sondern Ihre Marke zum Leben erwecken." data-en="I combine technical expertise with creative design. Every project is a new opportunity to create something unique – websites that don't just work, but bring your brand to life.">Bei CherrYX verbinde ich technische Expertise mit kreativem Design. Jedes Projekt ist für mich eine neue Chance, etwas Einzigartiges zu schaffen – Websites, die nicht nur funktionieren, sondern Ihre Marke zum Leben erwecken.</p>
         </div>
     </section>
 
@@ -1347,34 +1417,6 @@
 
     <!-- Section 5 - Feature -->
     <section class="feature-section" id="about" aria-labelledby="feature-title">
-        <!-- SVG Background Pattern -->
-        <div class="feature-bg" aria-hidden="true">
-            <svg class="feature-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-                <!-- Abstract geometric shapes -->
-                <circle cx="100" cy="100" r="300" fill="none" stroke="#e0e0e0" stroke-width="1"/>
-                <circle cx="100" cy="100" r="250" fill="none" stroke="#f0f0f0" stroke-width="1"/>
-                <circle cx="1100" cy="700" r="400" fill="none" stroke="#e8e8e8" stroke-width="1"/>
-                <circle cx="1100" cy="700" r="350" fill="none" stroke="#f0f0f0" stroke-width="1"/>
-                
-                <!-- Diagonal lines -->
-                <line x1="0" y1="600" x2="400" y2="200" stroke="#f0f0f0" stroke-width="1"/>
-                <line x1="800" y1="0" x2="1200" y2="400" stroke="#e8e8e8" stroke-width="1"/>
-                
-                <!-- Dots pattern -->
-                <g fill="#e0e0e0">
-                    <circle cx="600" cy="150" r="3"/>
-                    <circle cx="650" cy="180" r="2"/>
-                    <circle cx="550" cy="120" r="2"/>
-                    <circle cx="700" cy="200" r="3"/>
-                    <circle cx="500" cy="100" r="2"/>
-                </g>
-                
-                <!-- Abstract connection lines -->
-                <path d="M 200 400 Q 400 300 600 400 T 1000 400" fill="none" stroke="#e8e8e8" stroke-width="1"/>
-                <path d="M 0 500 Q 300 400 600 500 T 1200 500" fill="none" stroke="#f0f0f0" stroke-width="1"/>
-            </svg>
-        </div>
-        
         <div class="feature-wrapper feature-modern">
             <div class="feature-header">
                 <p class="feature-label-line" data-de="Mein Ansatz" data-en="My Approach">Mein Ansatz</p>
@@ -1387,7 +1429,7 @@
                     <span class="title-word title-accent" data-de="Zuverlässig." data-en="Reliable.">Zuverlässig.</span>
                 </h2>
                 
-                <p class="feature-text-centered" data-de="Gute Webentwicklung verbindet – Ihre Marke mit Ihren Besuchern. Accessibility ist dabei Standard, nicht Option. Präzises Design transportiert Ihre Werte und schafft Vertrauen." data-en="Good web development connects – your brand with your visitors. Accessibility is standard, not optional. Precise design conveys your values and builds trust.">Gute Webentwicklung verbindet – Ihre Marke mit Ihren Besuchern. Accessibility ist dabei Standard, nicht Option. Präzises Design transportiert Ihre Werte und schafft Vertrauen.</p>
+                <p class="feature-text-centered" data-de="Gute Webentwicklung verbindet – Ihre Marke mit Ihren Besuchern. Barrierefreiheit ist dabei Standard, nicht Option. Präzises Design transportiert Ihre Werte und schafft Vertrauen." data-en="Good web development connects – your brand with your visitors. Accessibility is standard, not optional. Precise design conveys your values and builds trust.">Gute Webentwicklung verbindet – Ihre Marke mit Ihren Besuchern. Accessibility ist dabei Standard, nicht Option. Präzises Design transportiert Ihre Werte und schafft Vertrauen.</p>
             </div>
             
             <div class="feature-keywords">
@@ -1404,6 +1446,9 @@
         <h2 id="contact-title" class="contact-title" data-de="Projekt starten" data-en="Start a Project">Projekt starten</h2>
         
         <form class="contact-form" id="contactForm" aria-label="Kontaktformular">
+            <!-- CSRF-Token für Formularsicherheit -->
+            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrf_token); ?>">
+            
             <!-- Honeypot Spam-Schutz (für User unsichtbar) -->
             <label for="website" class="honeypot">Website</label>
             <input type="text" id="website" name="website" class="honeypot" tabindex="-1" autocomplete="off">
@@ -1436,6 +1481,14 @@
         </div>
     </section>
     </main>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner" role="alert" aria-live="polite">
+        <p data-de="Diese Website verwendet technisch notwendige Cookies für die Sicherheit und Ihre Spracheinstellung. Mehr dazu in unserer <a href='datenschutz.html'>Datenschutzerklärung</a>." data-en="This website uses technically necessary cookies for security and your language preference. Learn more in our <a href='datenschutz.html'>Privacy Policy</a>.">
+            Diese Website verwendet technisch notwendige Cookies für die Sicherheit und Ihre Spracheinstellung. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+        </p>
+        <button class="cookie-btn" id="cookieAccept" data-de="Verstanden" data-en="Got it">Verstanden</button>
+    </div>
 
     <!-- Footer -->
     <footer role="contentinfo">
@@ -1704,6 +1757,20 @@
         if (savedLang && (savedLang === 'de' || savedLang === 'en')) {
             switchLanguage(savedLang);
         }
+
+        // Cookie Banner
+        const cookieBanner = document.getElementById('cookieBanner');
+        const cookieAccept = document.getElementById('cookieAccept');
+        
+        // Prüfen ob Banner bereits akzeptiert wurde
+        if (!localStorage.getItem('cherryx-cookie-accepted')) {
+            cookieBanner.classList.add('show');
+        }
+
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cherryx-cookie-accepted', 'true');
+            cookieBanner.classList.remove('show');
+        });
     </script>
 </body>
 </html>
